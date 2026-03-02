@@ -1,5 +1,7 @@
 .vscode
 build
 *.csv
+*.xlsx
+*.docx
 *.txt
 !CMakeLists.txt
