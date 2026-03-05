@@ -29,19 +29,11 @@ void matrix_vector_product_omp(const std::vector<double>& a,
                                std::vector<double>& c,
                                size_t m, size_t n, int num_threads)
 {
-#pragma omp parallel num_threads(num_threads)
-    {
-        int nthreads = omp_get_num_threads();
-        int threadid = omp_get_thread_num();
-        int items_per_thread = static_cast<int>(m) / nthreads;
-        int lb = threadid * items_per_thread;
-        int ub = (threadid == nthreads - 1) ? static_cast<int>(m) - 1
-                                             : (lb + items_per_thread - 1);
-        for (int i = lb; i <= ub; ++i) {
-            c[i] = 0.0;
-            for (size_t j = 0; j < n; ++j)
-                c[i] += a[i * n + j] * b[j];
-        }
+#pragma omp parallel for num_threads(num_threads)
+    for (int i = 0; i < static_cast<int>(m); ++i) {
+        c[i] = 0.0;
+        for (size_t j = 0; j < n; ++j)
+            c[i] += a[i * n + j] * b[j];
     }
 }
 
