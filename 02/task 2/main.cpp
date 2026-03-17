@@ -148,6 +148,7 @@ int main()
         for (int num_threads : num_threads_list) {
             t_serial_sum = 0;
             t_parallel_sum = 0;
+            t_parallel_atomic_sum = 0;
             std::cout << "Running for num_threads: " << num_threads << std::endl;
             for (int i = 0; i < ITERATIONS; i++) {
                 double t_serial = run_serial();

@@ -119,7 +119,6 @@ void solve_parallel_2(const std::vector<double>& a,
             {
                 stop = (std::sqrt(dev / b_len_sq) < epsilon);
             }
-            #pragma omp barrier
         }
     }
 }
