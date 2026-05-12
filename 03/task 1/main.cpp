@@ -123,7 +123,7 @@ static double run_parallel(size_t m, size_t n, int num_threads)
     return std::chrono::duration<double>(end - start).count();
 }
 
-static const std::vector<int> num_threads_list = {1, 2, 4, 6, 8};
+static const std::vector<int> num_threads_list = {1,2,4,7,8,16,20,40};
 
 int main(int argc, char* argv[])
 {
