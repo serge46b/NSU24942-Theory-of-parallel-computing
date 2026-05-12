@@ -10,7 +10,6 @@
 
 
 
-// Compute matrix-vector product c[m] = a[m][n] * b[n]
 void matrix_vector_product(const std::vector<double>& a,
                            const std::vector<double>& b,
                            std::vector<double>& c,
@@ -23,7 +22,6 @@ void matrix_vector_product(const std::vector<double>& a,
     }
 }
 
-// Compute matrix-vector product c[m] = a[m][n] * b[n] (OpenMP parallel)
 void matrix_vector_product_omp(const std::vector<double>& a,
                                const std::vector<double>& b,
                                std::vector<double>& c,
